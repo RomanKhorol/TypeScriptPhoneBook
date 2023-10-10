@@ -1,3 +1,5 @@
+import { IauthUser } from "./IauthTipes";
+
 export interface credentialsRegisterTipe {
   email: string;
   name: string;
@@ -6,4 +8,8 @@ export interface credentialsRegisterTipe {
 export interface credentialsLoginTipe {
   email: string;
   password: string;
+}
+export interface registerDataType {
+  token: string;
+  user: IauthUser;
 }

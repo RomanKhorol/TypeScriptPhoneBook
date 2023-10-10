@@ -1,5 +1,6 @@
 import Filter from "../../components/Filrt/Filtr";
 import ContactsList from "../../components/ContactList/ContactList";
+import { AddForm } from "../../components/AddAbonentForm/AddAbonentForm";
 import { FC } from "react";
 
 const Contacts: FC = () => {
@@ -7,7 +8,7 @@ const Contacts: FC = () => {
     <>
       <div>
         <h1>Add new contact</h1>
-        <h1>Here will be AddForm</h1>
+        <AddForm />
       </div>
       <h2>Contacts</h2>
       <Filter />

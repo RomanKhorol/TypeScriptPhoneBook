@@ -16,7 +16,7 @@ const ContactItem: FC<ContactItemProps> = ({ contact }) => {
   return (
     <li>
       <span>{contact.name}:</span>
-      <span>{contact.phone}</span>
+      <span>{contact.number}</span>
       <button onClick={clickHendler}>Delete</button>
     </li>
   );

@@ -11,8 +11,8 @@ export const PrivateRoute: FC<privateRouteProps> = ({
   component: Component,
   redirectTo = "/",
 }) => {
-  const isLoggedIn = useAppSelector((state) => state.ayth.isLoggedIn);
-  const isSteelRefreshing = useAppSelector((state) => state.ayth.isRefreshing);
+  const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
+  const isSteelRefreshing = useAppSelector((state) => state.auth.isRefreshing);
   const shouldRedirect = !isLoggedIn && !isSteelRefreshing;
   return shouldRedirect ? <Navigate to={redirectTo} /> : <Component />;
 };

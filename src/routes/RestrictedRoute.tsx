@@ -11,7 +11,7 @@ export const RestrictedRoute: FC<RestrictedRouteProps> = ({
   component: Component,
   redirectTo = "/",
 }) => {
-  const isLoggedIn = useAppSelector((state) => state.ayth.isLoggedIn);
+  const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
 
   return isLoggedIn ? <Navigate to={redirectTo} /> : <Component />;
 };

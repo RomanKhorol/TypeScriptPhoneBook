@@ -5,7 +5,7 @@ import UserMenu from "../UserMenu/UserMenu";
 import { useAppSelector } from "../../hooks/redux";
 
 const SharedLayout: FC = () => {
-  const isLoggedIn = useAppSelector((state) => state.ayth.isLoggedIn);
+  const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
   return (
     <div>
       <header>

@@ -4,7 +4,7 @@ import { logout } from "../../store/redusers/actioncreators/AuthActionCreator";
 
 const UserMenu: FC = () => {
   const dispatch = useAppDispatch();
-  const name = useAppSelector((state) => state.ayth.user.name);
+  const name = useAppSelector((state) => state.auth.user.name);
   const logOutClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     dispatch(logout());
   };
