@@ -1,6 +1,13 @@
 import { useAppDispatch } from "../../hooks/redux";
 import { useState } from "react";
 import { login } from "../../store/redusers/actioncreators/AuthActionCreator";
+import {
+  LoginFormWrapar,
+  LoginTitle,
+  LabelLogin,
+  Button,
+  LabelInput,
+} from "./Login.styled";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -28,30 +35,30 @@ const Login = () => {
   };
   return (
     <div>
-      <h1>Login page</h1>
+      <LoginTitle>Login page</LoginTitle>
       <form onSubmit={handleSubmit} autoComplete="off">
-        <div>
-          <label>
+        <LoginFormWrapar>
+          <LabelLogin>
             Email
-            <input
+            <LabelInput
               type="email"
               name="email"
               value={email}
               onChange={handlChange}
             />
-          </label>
-          <label>
+          </LabelLogin>
+          <LabelLogin>
             Password
-            <input
+            <LabelInput
               type="password"
               name="password"
               value={password}
               onChange={handlChange}
             />
-          </label>
-        </div>
+          </LabelLogin>
+        </LoginFormWrapar>
 
-        <button type="submit">Enter</button>
+        <Button type="submit">Enter</Button>
       </form>
     </div>
   );

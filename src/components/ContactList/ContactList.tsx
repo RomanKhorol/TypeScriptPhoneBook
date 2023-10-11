@@ -4,6 +4,7 @@ import getFilteredContacts from "../../helpers/VisibleItems";
 import ContactItem from "../ContactItem/ContactItem";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchContactsAction } from "../../store/redusers/actioncreators/ContactsActionCreator";
+import { AbonentListUl } from "./ContactList.styled";
 const ContactsList: FC = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -22,11 +23,11 @@ const ContactsList: FC = () => {
       {error && <p>{error}</p>}
       {contacts.length > 0 && (
         <div>
-          <ul>
+          <AbonentListUl>
             {filteredContacts.map((contact) => {
               return <ContactItem key={contact.id} contact={contact} />;
             })}
-          </ul>
+          </AbonentListUl>
         </div>
       )}
     </>

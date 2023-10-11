@@ -3,6 +3,13 @@ import { useState } from "react";
 
 import { register } from "../../store/redusers/actioncreators/AuthActionCreator";
 import { useAppDispatch } from "../../hooks/redux";
+import {
+  LoginTitle,
+  LoginFormWrapar,
+  LabelLogin,
+  LabelInput,
+  Button,
+} from "../login/Login.styled";
 
 const RegisterForm: FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -34,39 +41,39 @@ const RegisterForm: FC = () => {
   };
   return (
     <div>
-      <h1>Register page</h1>
+      <LoginTitle>Register page</LoginTitle>
       <form onSubmit={handleSubmit} autoComplete="off">
-        <div>
-          <label>
+        <LoginFormWrapar>
+          <LabelLogin>
             Name
-            <input
+            <LabelInput
               type="name"
               name="name"
               value={name}
               onChange={handlChange}
             />
-          </label>
-          <label>
+          </LabelLogin>
+          <LabelLogin>
             Email
-            <input
+            <LabelInput
               type="email"
               name="email"
               value={email}
               onChange={handlChange}
             />
-          </label>
-          <label>
+          </LabelLogin>
+          <LabelLogin>
             Password
-            <input
+            <LabelInput
               type="password"
               name="password"
               value={password}
               onChange={handlChange}
             />
-          </label>
-        </div>
+          </LabelLogin>
+        </LoginFormWrapar>
 
-        <button type="submit">Aply</button>
+        <Button type="submit">Aply</Button>
       </form>
     </div>
   );

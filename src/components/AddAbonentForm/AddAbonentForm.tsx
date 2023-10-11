@@ -4,6 +4,19 @@ import { addContactAction } from "../../store/redusers/actioncreators/ContactsAc
 
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { FC } from "react";
+import { InputList, Label, Button } from "./AddAbonentForm.styled";
+import styled from "styled-components";
+
+const Input = styled(Field)`
+  margin-left: auto;
+  outline: none;
+  border-color: #a9a9a9;
+  border-radius: 4px;
+  :focus {
+    border-color: #4169e1;
+    box-shadow: 1px 1px 2px 0 #4169e1;
+  }
+`;
 
 interface initialValuesTypes {
   name: string;
@@ -37,10 +50,10 @@ export const AddForm: FC = () => {
     <Formik initialValues={initialValues} onSubmit={hendleSubmit}>
       <div>
         <Form autoComplete="off">
-          <ul>
+          <InputList>
             <li>
-              <label htmlFor="name">Name</label>
-              <Field
+              <Label htmlFor="name">Name</Label>
+              <Input
                 type="text"
                 name="name"
                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -49,8 +62,8 @@ export const AddForm: FC = () => {
               />
             </li>
             <li>
-              <label htmlFor="number">Number</label>
-              <Field
+              <Label htmlFor="number">Number</Label>
+              <Input
                 type="tel"
                 name="number"
                 pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -58,9 +71,9 @@ export const AddForm: FC = () => {
                 required
               />
             </li>
-          </ul>
+          </InputList>
 
-          <button type="submit">Add contact</button>
+          <Button type="submit">Add contact</Button>
         </Form>
       </div>
     </Formik>

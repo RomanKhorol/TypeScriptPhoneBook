@@ -1,22 +1,35 @@
 import { FC } from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import UserMenu from "../UserMenu/UserMenu";
 import { useAppSelector } from "../../hooks/redux";
+import { LinkDivWraper, LinkNav, WardOr } from "./SharedLayout.styled";
 
 const SharedLayout: FC = () => {
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
   return (
-    <div>
+    <div
+      style={{
+        height: "100%",
+        padding: "15px",
+
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: 40,
+        color: "#010101",
+      }}
+    >
       <header>
-        <div>
+        <LinkDivWraper>
           {!isLoggedIn && <b>Welcome to phonebook</b>}
-          {!isLoggedIn && <NavLink to="/register">Register</NavLink>}
-          {!isLoggedIn && <h3>or</h3>}
-          {!isLoggedIn && <NavLink to="/login">Login</NavLink>}
+          {!isLoggedIn && <LinkNav to="/register">Register</LinkNav>}
+          {!isLoggedIn && <WardOr>or</WardOr>}
+          {!isLoggedIn && <LinkNav to="/login">Login</LinkNav>}
 
           {isLoggedIn && <UserMenu />}
-        </div>
+        </LinkDivWraper>
       </header>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />

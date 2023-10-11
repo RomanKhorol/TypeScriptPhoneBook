@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useAppDispatch } from "../../hooks/redux";
 import { setFilter } from "../../store/redusers/slices/FilerSlice";
+import { FitrWrap, FitrTitle, FitrInput } from "./Filtr.styled";
 
 const Filter: FC = () => {
   const dispatch = useAppDispatch();
@@ -9,11 +10,11 @@ const Filter: FC = () => {
     dispatch(setFilter(e.target.value));
   };
   return (
-    <div>
-      <h2>Find contact by name</h2>
+    <FitrWrap>
+      <FitrTitle>Find contact by name</FitrTitle>
 
-      <input type="text" onChange={changeFilter} placeholder="Enter name" />
-    </div>
+      <FitrInput type="text" onChange={changeFilter} placeholder="Enter name" />
+    </FitrWrap>
   );
 };
 export default Filter;

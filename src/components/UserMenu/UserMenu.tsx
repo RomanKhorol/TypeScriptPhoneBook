@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { logout } from "../../store/redusers/actioncreators/AuthActionCreator";
+import { Button } from "./UserMenu.styled";
 
 const UserMenu: FC = () => {
   const dispatch = useAppDispatch();
@@ -12,9 +13,9 @@ const UserMenu: FC = () => {
   return (
     <div>
       <p>Welcome to your contacts, {name}</p>
-      <button type="button" onClick={logOutClick}>
+      <Button type="button" onClick={logOutClick}>
         Logout
-      </button>
+      </Button>
     </div>
   );
 };
