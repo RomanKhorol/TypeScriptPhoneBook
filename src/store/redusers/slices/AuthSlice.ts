@@ -8,6 +8,7 @@ import {
   fecthCurrentUser,
   login,
 } from "../actioncreators/AuthActionCreator";
+import { registerDataType } from "../../../models/credentialTipes";
 export interface AuthState {
   user: IauthUser;
   token: string | null;
@@ -25,17 +26,23 @@ const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [register.fulfilled.type]: (state, action: PayloadAction<AuthState>) => {
+    [register.fulfilled.type]: (
+      state,
+      action: PayloadAction<registerDataType>
+    ) => {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
-    [login.fulfilled.type]: (state, action: PayloadAction<AuthState>) => {
+    [login.fulfilled.type]: (
+      state,
+      action: PayloadAction<registerDataType>
+    ) => {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
-    [logout.fulfilled.type]: (state, action) => {
+    [logout.fulfilled.type]: (state) => {
       state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
@@ -47,7 +54,7 @@ const authSlice = createSlice({
       state,
       action: PayloadAction<IauthUser>
     ) => {
-      state.user = { ...action.payload };
+      state.user = action.payload;
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },

@@ -7,6 +7,7 @@ import {
   AbonentText,
   AbonentDeleteBnt,
 } from "./ContactItem.styled";
+
 interface ContactItemProps {
   contact: Icontact;
 }
