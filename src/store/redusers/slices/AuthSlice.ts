@@ -9,6 +9,7 @@ import {
   login,
 } from "../actioncreators/AuthActionCreator";
 import { registerDataType } from "../../../models/credentialTipes";
+
 export interface AuthState {
   user: IauthUser;
   token: string | null;

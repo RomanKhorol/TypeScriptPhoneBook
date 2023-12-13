@@ -5,6 +5,7 @@ import ContactItem from "../ContactItem/ContactItem";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchContactsAction } from "../../store/redusers/actioncreators/ContactsActionCreator";
 import { AbonentListUl } from "./ContactList.styled";
+
 const ContactsList: FC = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {

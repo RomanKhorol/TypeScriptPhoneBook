@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import * as contactsShelfAPI from "../apies/ContactsShelfAPI";
 import { AddContactType } from "../../../models/addContactTypes";
 import { Icontact } from "../../../models/Icontact";
+
 export const fetchContactsAction = createAsyncThunk<
   Icontact[],
   undefined,
@@ -15,6 +16,7 @@ export const fetchContactsAction = createAsyncThunk<
     return rejectWithValue(e.message);
   }
 });
+
 export const addContactAction = createAsyncThunk<
   Icontact,
   AddContactType,
